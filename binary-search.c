@@ -1,10 +1,8 @@
 // Binary Search using divide and conquer approach
 #include <stdio.h>
 int binary_search(int a[],int key,int beg,int end){
-   if(beg>=end){
-       return -1; //if element not found
-   }
-   else{
+    int pos=-1;
+   while(beg<=end){
        int mid=(beg+end)/2; //finding the mid index
        if(key==a[mid]){ //comparing number with element at mid index
            return mid; //position of element returned
@@ -18,9 +16,10 @@ int binary_search(int a[],int key,int beg,int end){
            }
        }
    }
+   return pos;
 }
 int main() {
-    int a[]={4,25,7,65};
+    int a[]={4,7,25,65};
     int num;
     int l=sizeof(a)/sizeof(typeof(a[0])); //finding size of array
     printf("Enter number to be searched: ");
